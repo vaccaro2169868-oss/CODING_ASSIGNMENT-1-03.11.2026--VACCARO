@@ -1,5 +1,4 @@
 # CODING_ASSIGNMENT-1-03.11.2026--VACCARO
-# CODING_ASSIGNMENT-1-03.11.2026--VACCARO
 
 Algorithmic Sequence Analysis & Graph Algorithms Benchmark. This repository contains a comprehensive suite of theoretical proofs, algorithmic implementations, and empirical performance benchmarks in Python. The codebase addresses three core computer science and bioinformatics domains: k-mer substring searching, reverse-complement DNA palindrome detection, and shortest-path algorithms on graphs with arbitrary edge weights.
 
