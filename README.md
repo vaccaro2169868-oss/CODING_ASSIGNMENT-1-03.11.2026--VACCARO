@@ -69,10 +69,13 @@ Ensure you have Python 3.9+ installed along with the following required librarie
 ```bash
 pip install numpy matplotlib networkx
 
-## 🚀 Usag
+## 🚀 Usage
+
+### 1. Running the Jupyter Notebook
 
 Launch Jupyter Notebook or JupyterLab from your terminal:
 
+```bash
 jupyter notebook "CODING_ASSIGNMENT-1(03.11.2026)-VACCARO.ipynb"
 
 
