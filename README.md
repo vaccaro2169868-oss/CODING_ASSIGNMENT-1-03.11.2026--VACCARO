@@ -99,29 +99,23 @@ python -c "import matplotlib, numpy, networkx; print('All good!')"
 ## ▶️ Usage
 
 Run the main pipeline 
-
 ```bash
 python coding1-py-vaccaro.py
 ```
 
-Enable additional sections
-Uncomment the relevant lines inside the if __name__ == "__main__": block of coding1-py-vaccaro.py:
-
-```python
-if __name__ == "__main__":
-    # run_benchmark_2_3()   # E. coli U00096.3 palindrome benchmark
-    # validate_networkx()   # 100 random-graph validation vs networkx
-    main()                  # ATP-weighted metabolic network
 Run the tests
-bash
+```bash
 python tests1-ipynb-vaccaro.py
+```
 or, if you prefer the unittest discovery style:
 
-bash
+```bash
 python -m unittest tests1-ipynb-vaccaro
+```
 Explore the results visually
-bash
+```bash
 jupyter notebook coding1-ipynb-vaccaro.ipynb
+```
 All plots (log-log benchmarks, crossover points, exponent fits) are generated inside the notebook.
 
 
