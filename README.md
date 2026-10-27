@@ -21,13 +21,95 @@ NOTE: the Python file doesn't print the output because the tests run is easier a
 
 The Python File to run tests (`tests1-ipynb-vaccaro`) imports the functions from the other py file and performs the tests provided.
 
-## ⚙️ Prerequisites & Installation
+## 📂 Repository Structure
 
-To run the code, you will need **Python 3.8+** and Jupyter Notebook (or JupyterLab). 
+├── coding1-py-vaccaro.py              # Main algorithms (Parts 1, 2, 3)
+├── coding1-ipynb-vaccaro.ipynb        # Same code, with plot/output visualization
+├── tests1-ipynb-vaccaro.py            # Unit tests importing the main module
+├── metabolic_energy_balance_network.csv  # ATP-weighted metabolic graph (Part 3.3)
+└── README.md
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo-name
+## 🛠️ Prerequisites
+
+- Python ≥ 3.8
+
+- pip (for installing third-party packages)
+
+- Internet connection (only required to download the E. coli U00096.3 genome during run_benchmark_2_3())
+
+**Standard library used (no installation required)**
+random, time, signal, threading, _thread, math, heapq, urllib.request, csv, importlib, unittest — all bundled with Python.
+
+**Third-party libraries**
+The main module requires the following external libraries:
+
+import matplotlib.pyplot as plt
+import numpy as np
+import networkx as nx
+The test file additionally imports:
+
+import importlib
+import unittest
+import networkx as nx
+
+## ⚙️ Installation
+
+Clone the repository:
+
+bash
+git clone https://github.com/<your-username>/<your-repo>.git
+cd <your-repo>
+Create a virtual environment (recommended):
+
+bash
+python -m venv .venv
+
+# Linux / macOS
+source .venv/bin/activate
+
+# Windows (PowerShell)
+.venv\Scripts\Activate.ps1
+Install the dependencies:
+
+bash
+pip install --upgrade pip
+pip install matplotlib numpy networkx
+Or, if you prefer a one-liner:
+
+bash
+pip install matplotlib numpy networkx jupyter
+jupyter is only needed if you plan to run the notebook version.
+
+Verify the installation:
+
+python
+python -c "import matplotlib, numpy, networkx; print('All good!')"
+
+## ▶️ Usage
+
+Run the main pipeline (Part 3.3 by default)
+bash
+python coding1-py-vaccaro.py
+This loads metabolic_energy_balance_network.csv, computes the shortest paths from Glucose to Pyruvate / Oxaloacetate / Serine using both Dijkstra and Bellman-Ford, prints where Dijkstra fails, and extracts a reachable negative-weight cycle.
+
+Enable additional sections
+Uncomment the relevant lines inside the if __name__ == "__main__": block of coding1-py-vaccaro.py:
+
+python
+if __name__ == "__main__":
+    # run_benchmark_2_3()   # E. coli U00096.3 palindrome benchmark
+    # validate_networkx()   # 100 random-graph validation vs networkx
+    main()                  # ATP-weighted metabolic network
+Run the tests
+bash
+python tests1-ipynb-vaccaro.py
+or, if you prefer the unittest discovery style:
+
+bash
+python -m unittest tests1-ipynb-vaccaro
+Explore the results visually
+bash
+jupyter notebook coding1-ipynb-vaccaro.ipynb
+All plots (log-log benchmarks, crossover points, exponent fits) are generated inside the notebook.
 
 
