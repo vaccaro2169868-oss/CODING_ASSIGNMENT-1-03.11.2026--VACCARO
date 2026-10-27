@@ -14,12 +14,12 @@ The Python File with the algorithms(`coding1-py-vaccaro`) contains the following
    - Benchmarks the algorithms on the real *E. coli* genome (U00096.3) and compares the observed counts against the theoretical random expectation.
 3. **Graph Algorithms:** 
    - **3.1 & 3.2:** Implements Breadth-First Search (BFS) and Dijkstra's algorithm from scratch. Validates them against `networkx` on 100 random graphs and benchmarks them across different graph densities.
-   - **3.3:** Compares Dijkstra against Bellman-Ford on an ATP-weighted metabolic network ('metabolic_energy_balance_network.csv'). Demonstrates why Dijkstra fails on negative-weight graphs and extracts reachable negative-weight cycles.
+   - **3.3:** Compares Dijkstra against Bellman-Ford on an ATP-weighted metabolic network (`metabolic_energy_balance_network.csv`). Demonstrates why Dijkstra fails on negative-weight graphs and extracts reachable negative-weight cycles.
   
-The Jupyter Notebook File contains the same code in the Python one, but allows the user to visualize the plots and the results of the analysis.
+The Jupyter Notebook File (`coding1-ipynb-vaccaro`) contains the same code in the Python one, but allows the user to visualize the plots and the results of the analysis.
 NOTE: the Python file doesn't print the output because the tests run is easier and the algortihms do not have to be runned again.
 
-The Python File to run tests ('tests1-ipynb-vaccaro') imports the functions from the other py file and performs the tests provided.
+The Python File to run tests (`tests1-ipynb-vaccaro`) imports the functions from the other py file and performs the tests provided.
 
 ## ⚙️ Prerequisites & Installation
 
