@@ -23,11 +23,13 @@ The Python File to run tests (`tests1-ipynb-vaccaro`) imports the functions from
 
 ## 📂 Repository Structure
 
+```python
 ├── coding1-py-vaccaro.py              # Main algorithms (Parts 1, 2, 3)
 ├── coding1-ipynb-vaccaro.ipynb        # Same code, with plot/output visualization
 ├── tests1-ipynb-vaccaro.py            # Unit tests importing the main module
 ├── metabolic_energy_balance_network.csv  # ATP-weighted metabolic graph (Part 3.3)
 └── README.md
+```
 
 ## 🛠️ Prerequisites
 
