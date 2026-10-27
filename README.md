@@ -44,60 +44,70 @@ random, time, signal, threading, _thread, math, heapq, urllib.request, csv, impo
 
 **Third-party libraries**
 The main module requires the following external libraries:
-
+```python
 import matplotlib.pyplot as plt
 import numpy as np
 import networkx as nx
-The test file additionally imports:
-
+```
+The test file imports:
+```python
 import importlib
 import unittest
 import networkx as nx
+```
 
 ## ⚙️ Installation
 
 Clone the repository:
 
-bash
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
+```bash
+git clone https://github.com/vaccaro2169868-oss/CODING_ASSIGNMENT-1-03.11.2026--VACCARO.git
+cd CODING_ASSIGNMENT-1-03.11.2026--VACCARO
+```
 Create a virtual environment (recommended):
 
-bash
+```bash
 python -m venv .venv
-
+```
 # Linux / macOS
+```bash
 source .venv/bin/activate
-
+```
 # Windows (PowerShell)
+```bash
 .venv\Scripts\Activate.ps1
 Install the dependencies:
+```
 
-bash
+```bash
 pip install --upgrade pip
 pip install matplotlib numpy networkx
+```
 Or, if you prefer a one-liner:
 
-bash
+```bash
 pip install matplotlib numpy networkx jupyter
+```
 jupyter is only needed if you plan to run the notebook version.
 
 Verify the installation:
-
+```python
 python
 python -c "import matplotlib, numpy, networkx; print('All good!')"
+```
 
 ## ▶️ Usage
 
-Run the main pipeline (Part 3.3 by default)
-bash
+Run the main pipeline 
+
+```bash
 python coding1-py-vaccaro.py
-This loads metabolic_energy_balance_network.csv, computes the shortest paths from Glucose to Pyruvate / Oxaloacetate / Serine using both Dijkstra and Bellman-Ford, prints where Dijkstra fails, and extracts a reachable negative-weight cycle.
+```
 
 Enable additional sections
 Uncomment the relevant lines inside the if __name__ == "__main__": block of coding1-py-vaccaro.py:
 
-python
+```python
 if __name__ == "__main__":
     # run_benchmark_2_3()   # E. coli U00096.3 palindrome benchmark
     # validate_networkx()   # 100 random-graph validation vs networkx
