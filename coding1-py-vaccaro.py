@@ -1,5 +1,5 @@
 # %%
-import random, time, signal
+import random, time
 import matplotlib.pyplot as plt
 import threading
 import _thread
