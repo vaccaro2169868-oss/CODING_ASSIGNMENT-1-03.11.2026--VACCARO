@@ -20,15 +20,12 @@ The notebook (`coding1-ipynb-vaccaro.ipynb`) contains the same code but runs eve
 
 > **Note on execution** — Every section is implemented as a standalone function. Only `main()` (Part 3.3) is invoked from the `__main__` block, so running the script directly executes the ATP-network pipeline only. The other benchmarks must be invoked explicitly — either by calling them from `main()`, or by importing them in a small driver script or notebook cell.
 
-The test file (`tests1-ipynb-vaccaro.py`) imports the algorithms from the main module and runs the provided unit tests.
-
 ## 📂 Repository structure
 
 ```
 .
 ├── coding1-py-vaccaro.py                 # Main algorithms (Parts 1, 2, 3)
 ├── coding1-ipynb-vaccaro.ipynb           # Same code with plot/output visualisation
-├── tests1-ipynb-vaccaro.py               # Unit tests importing the main module
 ├── metabolic_energy_balance_network.csv  # ATP-weighted metabolic graph (Part 3.3)
 └── README.md
 ```
@@ -49,12 +46,6 @@ math, heapq, urllib.request, csv,
 collections (deque, defaultdict, Counter)
 ```
 
-Additional imports in `tests1-ipynb-vaccaro.py`:
-
-```
-importlib, unittest
-```
-
 ### Third-party libraries
 
 `coding1-py-vaccaro.py`:
@@ -62,12 +53,6 @@ importlib, unittest
 ```python
 import matplotlib.pyplot as plt
 import numpy as np
-import networkx as nx
-```
-
-`tests1-ipynb-vaccaro.py`:
-
-```python
 import networkx as nx
 ```
 
@@ -125,12 +110,6 @@ Every other section is implemented as a function but not invoked from `__main__`
 jupyter coding1-ipynb-vaccaro.ipynb
 ```
 
-### Run the tests
-
-```bash
-python tests1-ipynb-vaccaro.py
-```
-
 ## 📊 Outputs produced
 
 | Artefact | Produced by |
@@ -141,9 +120,6 @@ python tests1-ipynb-vaccaro.py
 | Log-log plots with fitted exponent α | `run_benchmarks_3_2()` (Part 3.2) |
 | Dijkstra-vs-Bellman-Ford report + negative cycle | `main()` (Part 3.3) |
 
-
-
-- **`dijkstra` is redefined in Part 3.3.** This is intentional: the Part-3.3 version works with the `defaultdict(list)` adjacency produced by `load_network`, while the Part-3.1 version expects the `build_adjlist` dict form. The Part-3.1 version is still used by `run_trial` / `validate_networkx`, since those call `build_adjlist` first.
 
 - **`time_call` timeout.** Uses `threading.Timer` + `_thread.interrupt_main`, which is CPython-specific and not sub-second accurate. A call exceeding the 10 s limit returns `None` and is filtered out of the plots.
 
